@@ -6,7 +6,10 @@ def mcd(x,y):
     else:
         return mcd(y,x%y)
 
+def main():
+    x= int(input("Numero 1: "))
+    y= int(input("Numero 2: "))
+    print("El mcd es de: ",mcd(x,y))
 
-x= int(input("Numero 1: "))
-y= int(input("Numero 2: "))
-print("El mcd es de: ",mcd(x,y))
+if __name__ == "__main__" :
+    main()

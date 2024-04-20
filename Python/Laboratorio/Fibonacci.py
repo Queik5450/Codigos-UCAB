@@ -7,5 +7,9 @@ def fibo(n,serie=[0,1]):
         serie.append(serie[-1] + serie[-2])
         return fibo(n,serie)
 
-n = int(input("Ingrese numero limite de la serie: "))
-print(fibo(n))
+def main():
+    n = int(input("Ingrese numero limite de la serie: "))
+    print(fibo(n))
+
+if __name__ == "__main__" :
+    main()
