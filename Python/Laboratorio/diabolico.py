@@ -1,4 +1,4 @@
-#Programa que indique si un numero es diabolico o no(Tiene un numero impar de ceros en base 2)
+#Programa que indique si un numero es diabolico o no usando recursividad(Tiene un numero impar de ceros en base 2)
 
 def diabolico(numero, ceros=0):
     if numero > 0:
@@ -10,7 +10,7 @@ def diabolico(numero, ceros=0):
         return ceros % 2 != 0, ceros
 
 def main():
-    numero=int (input("Por favor introducir numero a verificar: "))
+    numero=int (input("Introducir numero a verificar: "))
     is_diabolico, ceros = diabolico(numero)
     if is_diabolico:
         print(f"{numero} es un número diabólico. Tiene {ceros} ceros")

@@ -1,3 +1,6 @@
+#Programa que lea un numero y retorne si es apocaliptico o no usando recursividad y sin manejo de listas
+# Apocaliptico = Tiene 666 en el numero
+
 def apocaliptico(numero, apocalipsis):
     findelmundo=numero%10
     if  findelmundo==6:
@@ -15,7 +18,7 @@ def apocaliptico(numero, apocalipsis):
         return apocaliptico(numero // 10, apocalipsis)
         
 def main ():
-    numero=int(input("Por favor introduzca su posible numero apocaliptico\n"))
+    numero=int(input("Introduzca su posible numero apocaliptico\n"))
     apocalipsis=0
     if apocaliptico(numero, apocalipsis):
         print(f"{numero} es un número apocalíptico.")

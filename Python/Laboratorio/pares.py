@@ -1,3 +1,5 @@
+#Programa que reciba digitos pares de un numero y los sume de manera recursiva sin usar manejo de listas
+
 def suma_digitos_pares(k):
     if k == 0:
         return 0
@@ -9,7 +11,7 @@ def suma_digitos_pares(k):
             return suma_digitos_pares(k // 10)
 
 def main():
-    numero1 =int(input("Por favor ingresar el numero a evaluar\n"))
+    numero1 =int(input("Ingresar el numero a evaluar\n"))
     print(f"La suma de los dígitos pares de {numero1} es: {suma_digitos_pares(numero1)}")
 
 if __name__ == "__main__" :
