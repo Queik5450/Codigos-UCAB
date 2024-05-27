@@ -27,7 +27,7 @@ def average(student_number, students, califications):
     total_average = sum(califications) / len(califications)
     for i in range(student_number):
         individual_grades = califications[i*3:i*3+3]
-        individual_average = sum(individual_grades)
+        individual_average = sum(individual_grades) / len(individual_grades)
         if individual_average > total_average:
             print(f"Los estudiantes que tienen una nota mas alta del promedio son: {students[i]}")
 
