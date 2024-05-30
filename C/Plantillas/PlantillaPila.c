@@ -24,7 +24,7 @@ Stack *newStack(){
 void nullify(Stack *s){
      if (!s)
         return;
-    for (curp=s->head; curp ;curp=s->head){
+    for (Node *curp=s->head; curp ;curp=s->head){
         s->head=curp->next;
         free(curp);
     }
