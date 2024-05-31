@@ -27,7 +27,7 @@ int revisaLlena(Pila *pila) {
 
 void push(Pila *pila, int value) {
     if (revisaLlena(pila)) {
-        printf("Error: pila sobrecargada\n");
+        printf("Error: Pila sobrecargada\n");
         exit(1);
     }
     pila->dato[++pila->tope] = value;

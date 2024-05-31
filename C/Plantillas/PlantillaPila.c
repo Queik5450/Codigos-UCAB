@@ -79,12 +79,12 @@ int main(){
     push(s,4);
 
     top(s,&x);
-    printf("Element at top: %d\n", x);
+    printf("Elemento en el tope: %d\n", x);
     pop(s,&x);
-    printf("Element removed: %d\n", x);
+    printf("Elemento removido: %d\n", x);
     top(s,&x);
-    printf("New element at top: %d\n", x);
+    printf("Nuevo elemento en el tope: %d\n", x);
     nullify(s);
-    printf("Empty list: %d\n", empty);
+    printf("Lista vacia: %d\n", empty);
     return 0;
 }

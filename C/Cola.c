@@ -5,59 +5,57 @@ copia de una cola en otra.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Nodo {
-    int dato;
-    struct Nodo* next;
-} Nodo;
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
 
-typedef struct Espera {
-    Nodo* frente;
-    Nodo* trasera;
-} Espera;
+typedef struct Queue {
+    Node* front;
+    Node* rear;
+} Queue;
 
-void enqueue(Espera* espera, int dato) {
-    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
-    nuevoNodo->dato = dato;
-    nuevoNodo->next = NULL;
+void enqueue(Queue* queue, int data) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->next = NULL;
 
-    if (espera->trasera == NULL) {
-        espera->frente = nuevoNodo;
-        espera->trasera = nuevoNodo;
+    if (queue->rear == NULL) {
+        queue->front = newNode;
+        queue->rear = newNode;
     } else {
-        espera->trasera->next = nuevoNodo;
-        espera->trasera = nuevoNodo;
+        queue->rear->next = newNode;
+        queue->rear = newNode;
     }
 }
 
-int contadorNumerosPares(Espera* espera) {
-    int contador = 0;
-    Nodo* actual = espera->frente;
+int countEvenNumbers(Queue* queue) {
+    int count = 0;
+    Node* current = queue->front;
 
-    while (actual != NULL) {
-        if (actual->dato % 2 == 0) {
-            contador++;
+    while (current != NULL) {
+        if (current->data % 2 == 0) {
+            count++;
         }
-        actual = actual->next;
+        current = current->next;
     }
 
-    return contador;
+    return count;
 }
 
 int main() {
-    Espera espera;
-    espera.frente = NULL;
-    espera.trasera = NULL;
+    Queue queue;
+    queue.front = NULL;
+    queue.rear = NULL;
+    
+    enqueue(&queue, 1);
+    enqueue(&queue, 2);
+    enqueue(&queue, 3);
+    enqueue(&queue, 4);
+    enqueue(&queue, 5);
 
-    // Add elements to the espera
-    enqueue(&espera, 1);
-    enqueue(&espera, 2);
-    enqueue(&espera, 3);
-    enqueue(&espera, 4);
-    enqueue(&espera, 5);
-
-    // Count the number of even numbers
-    int contadorPar = contadorNumerosPares(&espera);
-    printf("Number of even numbers in the espera: %d\n", contadorPar);
+    int evenCount = countEvenNumbers(&queue);
+    printf("Numeros pares en espera: %d\n", evenCount);
 
     return 0;
 }
