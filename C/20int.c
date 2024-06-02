@@ -9,36 +9,46 @@ impares.
 
 #include <stdio.h>
 
-float relacionPI(int array[], int size){
+float relacionPI(int array[], int size)
+{
     int i;
     int sumaPares = 0, sumaImpares = 0;
-    for(i = 0; i < size; i++){
-        if(array[i] % 2 == 0){
+    for(i = 0; i < size; i++)
+    {
+        if(array[i] % 2 == 0)
+        {
             sumaPares += array[i];
-        }else{
+        }else
+        {
             sumaImpares += array[i];
         }
     }
-    if (sumaImpares == 0){
+    if (sumaImpares == 0)
+    {
         printf("No se puede dividir por 0\n");
         return 1;
     }
     return (float)sumaPares / sumaImpares;
 }
 
-int ocurrencia(int array[], int size, int num){
+int ocurrencia(int array[], int size, int num)
+{
     int count = 0;
-    for(int i = 0; i < size; i++){
-        if(array[i] == num){
+    for(int i = 0; i < size; i++)
+    {
+        if(array[i] == num)
+        {
             count++;
         }
     }
     return count;
 }
 
-int main(){
+int main()
+{
     int array[20], i, num;
-    for(i = 0; i < 20; i++){
+    for(i = 0; i < 20; i++)
+    {
         printf("Ingrese el numero %d: ", i + 1);
         scanf("%d", &array[i]);
     }

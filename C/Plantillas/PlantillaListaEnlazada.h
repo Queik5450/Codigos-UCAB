@@ -9,7 +9,8 @@ typedef struct node
     struct node *next;
 }Node;
 
-Node *new_item(char *name, int value){
+Node *new_item(char *name, int value)
+{
     Node *newp;
 
     if ((newp=(Node *) malloc (sizeof(Node)))== NULL)
@@ -22,14 +23,18 @@ Node *new_item(char *name, int value){
     return newp;
 }
 
-Node *remove_item(char *name, Node *listp){
+Node *remove_item(char *name, Node *listp)
+{
     Node *p, *prev=NULL;
     for (p=listp; p!=NULL ;p=p->next);
-        if (strcmp(p->name,name) == 0){
-            if (p != NULL){
+        if (strcmp(p->name,name) == 0)
+        {
+            if (p != NULL)
+            {
                 listp = p->next;
             }
-            else{
+            else
+            {
                 prev->next = p->next;
             free(p);
             return listp;
@@ -39,15 +44,18 @@ Node *remove_item(char *name, Node *listp){
     return listp;
 }
 
-Node *addfront(Node *listp, Node *newp){
+Node *addfront(Node *listp, Node *newp)
+{
     newp->next=listp;
     return newp;
 }
 
-Node *addend(Node *listp, Node *newp){
+Node *addend(Node *listp, Node *newp)
+{
     Node *p;
 
-    if (listp == NULL){
+    if (listp == NULL)
+    {
         return newp;
     for (p=listp;listp!=NULL;p=p->next);
         p->next = newp;
@@ -55,12 +63,16 @@ Node *addend(Node *listp, Node *newp){
     }
 }
 
-Node *insert(Node *listp, Node *newp){
+Node *insert(Node *listp, Node *newp)
+{
     Node *p, *prev=NULL;
     for (p=listp; p!=NULL && strcmp(p->name , newp->name)<0 ;p=p->next);
+    {
         prev=p;
+    }
     p=newp->next;
-    if (prev == NULL){ //Es en el inicio
+    if (prev == NULL) //Es en el inicio
+    { 
         return newp;
     prev->next=newp;
     return listp;
@@ -69,40 +81,51 @@ Node *insert(Node *listp, Node *newp){
 
 Node *lookup(char *name, Node *listp){
     for (;listp!=NULL; listp=listp->next);
-        if (strcmp(name,listp->name) == 0){
+        if (strcmp(name,listp->name) == 0)
+        {
             return listp;
         }
         return NULL;
 }
 
-int counter(Node *listp){
+int counter(Node *listp)
+{
     int n=0;
     
-    for (;listp!=NULL; listp=listp->next);
+    for (;listp!=NULL; listp=listp->next)
+    {
         n++;
+    }
     return n;
 }
 
-Node *freeall(Node *listp){
+Node *freeall(Node *listp)
+{
     Node *next;
-    for (;listp != NULL ;listp->next){
+    for (;listp != NULL ;listp->next)
+    {
         next=listp->next;
         free(listp);
     }
 
 }
 
-void print(Node *listp){
+void print(Node *listp)
+{
     printf("||");
-    for (;listp !=NULL;listp = listp ->next);
+    for (;listp !=NULL;listp = listp ->next)
+    {
         printf("%s:%d |", listp -> name, listp ->value);
+    }
     printf (NULL);
 }
 
-int is_empty(Node *listp){
+int is_empty(Node *listp)
+{
     return listp == NULL;
 }
-int main(){
+int main()
+{
     Node *listp=NULL;
 
     return 0;

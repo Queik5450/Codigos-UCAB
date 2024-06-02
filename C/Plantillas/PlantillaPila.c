@@ -12,45 +12,56 @@ typedef struct stack
     Node *head;
 }Stack;
 
-Stack *newStack(){
+Stack *newStack()
+{
     Stack *s;
-    if ((s=(Stack *)malloc(sizeof(Stack)))==NULL){
+    if ((s=(Stack *)malloc(sizeof(Stack)))==NULL)
+    {
         exit(1);
     s->head = NULL;
     return s;
     }
 }
 
-void nullify(Stack *s){
+void nullify(Stack *s)
+{
      if (!s)
         return;
-    for (Node *curp=s->head; curp ;curp=s->head){
+    for (Node *curp=s->head; curp ;curp=s->head)
+    {
         s->head=curp->next;
         free(curp);
     }
 }
 
-int top(Stack *s, int *value){
-    if (s && s->head){
+int top(Stack *s, int *value)
+{
+    if (s && s->head)
+    {
         *value = s->head->element;
         return 1;
     }
     return 0;
 }
 
-int empty(Stack *s){
-    if (!s||!s->head){
+int empty(Stack *s)
+{
+    if (!s||!s->head)
+    {
         return 1;
     return 0;
     }
 }
 
-int push(Stack *s, int value){
+int push(Stack *s, int value)
+{
     Node *newp;
-    if (!s){
+    if (!s)
+    {
         return 0;
     }
-    if ((newp = (Node *) malloc (sizeof(Node))) == NULL){
+    if ((newp = (Node *) malloc (sizeof(Node))) == NULL)
+    {
         newp->next=s->head;
         newp->element = value;
         s->head=newp;
@@ -58,8 +69,10 @@ int push(Stack *s, int value){
     }
 }
 
-int pop(Stack *s, int value){
-    if (s && s->head){
+int pop(Stack *s, int value)
+{
+    if (s && s->head)
+    {
         Node *aux = s->head;
         s->head =aux->next;
         value = aux->element;
@@ -69,7 +82,8 @@ int pop(Stack *s, int value){
     return 0;
 }
 
-int main(){
+int main()
+{
     Stack *s = newStack();
     int x;
     printf("Vacio %d \n", empty(s));

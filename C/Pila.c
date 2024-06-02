@@ -8,25 +8,31 @@ para almacenar los resultados intermedios.*/
 
 #define ESPACIO 100
 
-typedef struct {
+typedef struct 
+{
     int dato[ESPACIO];
     int tope;
 } Pila;
 
-void iniciarPila(Pila *pila) {
+void iniciarPila(Pila *pila) 
+{
     pila->tope = -1;
 }
 
-int revisaVacio(Pila *pila) {
+int revisaVacio(Pila *pila) 
+{
     return pila->tope == -1;
 }
 
-int revisaLlena(Pila *pila) {
+int revisaLlena(Pila *pila) 
+{
     return pila->tope == ESPACIO - 1;
 }
 
-void push(Pila *pila, int value) {
-    if (revisaLlena(pila)) {
+void push(Pila *pila, int value) 
+{
+    if (revisaLlena(pila)) 
+    {
         printf("Error: Pila sobrecargada\n");
         exit(1);
     }
@@ -34,7 +40,8 @@ void push(Pila *pila, int value) {
 }
 
 int pop(Pila *pila) {
-    if (revisaVacio(pila)) {
+    if (revisaVacio(pila)) 
+    {
         printf("Error: Pila vacia\n");
         exit(1);
     }
@@ -42,7 +49,8 @@ int pop(Pila *pila) {
 }
 
 void exch(Pila *pila) {
-    if (pila->tope < 1) {
+    if (pila->tope < 1) 
+    {
         printf("Error: Sin suficientes elementos en la pila\n");
         return;
     }
@@ -51,27 +59,33 @@ void exch(Pila *pila) {
     pila->dato[pila->tope - 1] = temp;
 }
 
-int factorial(Pila *pila, int n) {
-    if (n < 0) {
+int factorial(Pila *pila, int n) 
+{
+    if (n < 0) 
+    {
         printf("Error: Input invalido\n");
         exit(1);
     }
-    if (n == 0 || n == 1) {
+    if (n == 0 || n == 1) 
+    {
         return 1;
     }
     push(pila, n);
     int resultado = 1;
-    while (!revisaVacio(pila)) {
+    while (!revisaVacio(pila)) 
+    {
         int num = pop(pila);
         resultado *= num;
-        if (num > 1) {
+        if (num > 1) 
+        {
             push(pila, num - 1);
         }
     }
     return resultado;
 }
 
-int main() {
+int main() 
+{
     Pila pila;
     iniciarPila(&pila);
 

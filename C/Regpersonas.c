@@ -21,23 +21,31 @@ struct Regpersonas
 struct Regpersonas Regpersonas;
 
 
-int main(){
+int main()
+{
     printf("Ingrese la cedula: "); 
     scanf("%s", Regpersonas.Cedula);
     while(getchar() != '\n');
+
     printf("Ingrese el nombre y apellido: ");
     fgets(Regpersonas.Nombre, 30, stdin);
+
     printf("Ingrese la fecha de nacimiento(Seguir el formato DD/MM/AA): ");
     scanf("%s", Regpersonas.FechaNacimiento);
+
     printf("Ingrese el sexo(M/F): ");
     scanf("%s", Regpersonas.Sexo);
+
     printf("Ingrese el semestre: ");    
     scanf("%s", Regpersonas.Semestre);
     while (getchar() != '\n');
+
     printf("Ingrese el mensaje: ");
     fgets(Regpersonas.Mensaje, 100, stdin);
+
     printf("Ingrese la materia mas dificil: ");
     fgets(Regpersonas.Materia, 30, stdin);
+    
     printf("Sus datos son: \n Cedula: %s \n Nombre: %s Fecha de nacimiento: %s \n Sexo: %s \n Semestre: %s \n Mensaje: %s Materia mas dificil: %s", Regpersonas.Cedula, Regpersonas.Nombre, Regpersonas.FechaNacimiento, Regpersonas.Sexo, Regpersonas.Semestre, Regpersonas.Mensaje, Regpersonas.Materia);
     return 0;
 }

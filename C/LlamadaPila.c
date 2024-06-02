@@ -1,7 +1,8 @@
 //NECESITAS EL ARCHIVO DEL MISMO NOMBRE QUE ESTA EN LA CARPETA "PLANTILLAS"
 #include "PlantillaListaEnlazada.h"
 
-int main(){
+int main()
+{
     Node *listp = NULL;
 
     listp = insert(listp, new_item("Jose Andres", 7));

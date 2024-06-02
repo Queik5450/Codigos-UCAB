@@ -2,14 +2,16 @@
 #include <stdlib.h>
 
 // Definición de la estructura del nodo del árbol
-struct NodoArbol {
+struct NodoArbol 
+{
     int dato;
     struct NodoArbol* izquierdo;
     struct NodoArbol* derecho;
 };
 
 // Función para crear un nuevo nodo del árbol
-struct NodoArbol* crearNodo(int dato) {
+struct NodoArbol* crearNodo(int dato) 
+{
     struct NodoArbol* nodo = (struct NodoArbol*)malloc(sizeof(struct NodoArbol));
     nodo->dato = dato;
     nodo->izquierdo = NULL;
@@ -18,21 +20,28 @@ struct NodoArbol* crearNodo(int dato) {
 }
 
 // Función para insertar un nuevo nodo en el árbol
-struct NodoArbol* insertar(struct NodoArbol* raiz, int dato) {
-    if (raiz == NULL) {
+struct NodoArbol* insertar(struct NodoArbol* raiz, int dato) 
+{
+    if (raiz == NULL) 
+    {
         return crearNodo(dato);
     }
-    if (dato < raiz->dato) {
+    if (dato < raiz->dato) 
+    {
         raiz->izquierdo = insertar(raiz->izquierdo, dato);
-    } else if (dato > raiz->dato) {
+    } 
+    else if (dato > raiz->dato) 
+    {
         raiz->derecho = insertar(raiz->derecho, dato);
     }
     return raiz;
 }
 
 // Función para imprimir el árbol en orden
-void imprimirPostOrden(struct NodoArbol* raiz) {
-    if (raiz != NULL) {
+void imprimirPostOrden(struct NodoArbol* raiz) 
+{
+    if (raiz != NULL) 
+    {
         imprimirPostOrden(raiz->izquierdo);
         printf("%d ", raiz->dato);
         imprimirPostOrden(raiz->derecho);
@@ -40,7 +49,8 @@ void imprimirPostOrden(struct NodoArbol* raiz) {
 }
 
 // Función principal
-int main() {
+int main() 
+{
     struct NodoArbol* raiz = NULL;
 
     // Insertar nodos en el árbol

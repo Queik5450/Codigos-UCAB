@@ -22,11 +22,15 @@ void my_strrev(char *s)
 #include <stdio.h>
 #include <string.h>
 
-int my_nsubstr(const char *s1, const char *s2){
+int my_nsubstr(const char *s1, const char *s2)
+{
     int i, j;
-    for(i = 0; s2[i] != '\0'; i++){
-        for(j = 0; s1[j] != '\0'; j++){
-            if(s2[i] == s1[j]){
+    for(i = 0; s2[i] != '\0'; i++)
+    {
+        for(j = 0; s1[j] != '\0'; j++)
+        {
+            if(s2[i] == s1[j])
+            {
                 return 1;
             }
         }
@@ -34,7 +38,8 @@ int my_nsubstr(const char *s1, const char *s2){
     return 0;
 }
 
-void my_strrev(char *s){
+void my_strrev(char *s)
+{
     int i, j;
     char aux;
     for(i = 0, j = strlen(s) - 1; i < j; i++, j--){
@@ -44,8 +49,8 @@ void my_strrev(char *s){
     }
 }
 
-int main(){
-
+int main()
+{
     void cadap (char *s, char *t);
     char s[100], t[100];
     printf("Ingrese frase 1: ");
@@ -59,11 +64,11 @@ int main(){
     printf ("Frase invertida: ");
     my_strrev(s);
     printf("%s", s);
+
     return 0;
     /*
     La ventaja de usar apuntadores es que se ahorra memoria, 
     ya que no se crean variables innecesarias, 
     además de que se ahorra tiempo de ejecución.
     */
-   
 }
