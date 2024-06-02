@@ -114,26 +114,6 @@ int pop(Stack *s, int *value)
     return 0;
 }
 
-void add_to_front(Queue *q, int value)
-{
-    Node *newp;
-    if (!q)
-    {
-        return;
-    }
-    if ((newp = (Node*)malloc(sizeof(Node))) == NULL)
-    {
-        exit(1);
-    }
-    newp->element = value;
-    newp->next = q->start;
-    q->start = newp;
-    if (!q->end)
-    {
-        q->end = newp;
-    }
-}
-
 int empty(Stack *s)
 {
     if (!s||!s->head)
@@ -141,17 +121,6 @@ int empty(Stack *s)
         return 1;
     }
     return 0;
-}
-
-void invertStack(Stack *s, Queue *q) 
-{
-    int value;
-
-    while (!empty(s)) 
-    {
-        pop(s, &value);
-        add_to_front(q, value);
-    }
 }
 
 void printStack(Stack *s)
@@ -164,20 +133,29 @@ void printStack(Stack *s)
     }
 }
 
-void printQueue(Queue *q)
+void printInverted(Stack *s)
 {
-    Node *aux = q->start;
-    while (aux)
+    Queue *q = newQueue();
+    int value;
+
+    while (!empty(s))
     {
-        printf("%d\n", aux->element);
-        aux = aux->next;
+        pop(s, &value);
+        put_in_queue(q, value);
     }
+
+    while (q->start)
+    {
+        pop(q, &value);
+        push(s, value);
+    }
+
+    printStack(s);
 }
 
 int main()
 {
     Stack *s = newStack();
-    Queue *q = newQueue();
 
     push(s,1);
     push(s,2);
@@ -188,9 +166,9 @@ int main()
     printf("Stack\n");
     printStack(s);
     
-    printf("Queue\n");
-    invertStack(s, q);
-    printQueue(q);
+    printf("Stack invertido\n");
+
+    printInverted(s);
 
     return 0;
 
