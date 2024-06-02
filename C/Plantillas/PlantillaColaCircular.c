@@ -97,7 +97,8 @@ int main()
     printf("Ingresar valor de X: ");
     scanf("%d", &x);
 
-    int sumUntilX = sumUntilX*(&queue, x);
-    printf("Sumar hasta X: %d\n", sumUntilX);
+    printf("Sumar hasta X: %d\n", sumUntilX(&queue, x));
+    int sum = sumUntilX(&queue, x);
+    printf("Sumar hasta X: %d\n", sum);
     return 0;
 }
