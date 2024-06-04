@@ -42,7 +42,8 @@ void my_strrev(char *s)
 {
     int i, j;
     char aux;
-    for(i = 0, j = strlen(s) - 1; i < j; i++, j--){
+    for(i = 0, j = strlen(s) - 1; i < j; i++, j--)
+    {
         aux = s[i];
         s[i] = s[j];
         s[j] = aux;

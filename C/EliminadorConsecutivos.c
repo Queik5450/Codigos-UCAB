@@ -61,7 +61,8 @@ void insert_in_end(Array *L, int n)
 
 void show_elements(Node* head) {
     Node* current = head;
-    while (current != NULL) {
+    while (current != NULL) 
+    {
         printf("%d ", current->info);
         current = current->next;
     }
@@ -70,7 +71,8 @@ void show_elements(Node* head) {
 
 void show_reverse(Node* tail) {
     Node* current = tail;
-    while (current != NULL) {
+    while (current != NULL) 
+    {
         printf("%d ", current->info);
         current = current->prev;
     }
