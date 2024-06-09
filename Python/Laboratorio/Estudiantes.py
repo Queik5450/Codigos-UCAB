@@ -12,9 +12,10 @@ contenga la cédula, nombre, sexo y promedio de nota en un rango dado.
 def askData():
     try:
         f = open("ESTUDIANTES.dat", "x")
+        print("Creando archivo 'ESTUDIANTES.dat'...")
         pass
     except:
-        f = open("ESTUDIANTES.dat", "r+")
+        f = open("ESTUDIANTES.dat", "a")
         option = "s"
         while (option == "s"):
             cedula = str(input("Ingrese la cedula: "))
@@ -24,22 +25,33 @@ def askData():
             promedio = float(input("Ingrese el promedio: "))
             f.write(f"{cedula} {nombre} {fecha} {sexo} {promedio}\n")
             option = str(input("Desea ingresar otro estudiante? (S/N): ").lower())
+        print("\nVolviendo al menu...\n")
     f.close()
     main()
 
-def print_report(promedio1,promedio2):
+def create_report(promedio1,promedio2):
     try:
-        r = open("REPORTE.txt", "x")
-        pass
-    except:
         f = open("ESTUDIANTES.dat", "r")
-        r = open("REPORTE.txt", "r+")
-        while (EOFError == False):
-            line = f.readline().split(" ")
-            if (line(4) > promedio1) and (line(4) < promedio2):
-                r.write(f"{line(0)} {line(1)} {line(3)} {line(4)}\n")
+    except FileNotFoundError:
+        print("\nNO HAY ESTUDIANTES REGISTRADOS, REGRESANDO AL MENU...\n.")
+        return
+    
+    r = open("REPORTE.txt", "w")
+    line = f.readline()
+    while line:
+        student_data = line.split(" ")
+        if (float(student_data[4]) > promedio1) and (float(student_data[4]) < promedio2):
+            r.write(f"{student_data[0]} {student_data[1]} {student_data[3]} {student_data[4]}\n")
+        line = f.readline()
     r.close()
+    print_file_contents("REPORTE.txt")
+    f.close()
     main()
+
+def print_file_contents(filename):
+    with open(filename, 'r') as file:
+        for line in file:
+            print(line, end='')
 
 def main():
     print("BIENVENIDO AL SISTEMA DE INGRESO DE DATOS, POR FAVOR INGRESAR SU ACCION DESEADA")
@@ -50,12 +62,12 @@ def main():
     if (option == 2):
         promedio1 = int(input("Ingrese minimo del promedio: "))
         promedio2 = int(input("Ingrese maximo del promedio: "))
-        print_report(promedio1,promedio2)
+        create_report(promedio1,promedio2)
     if (option == 3):
-        print("GRACIAS POR UTILIZAR NUESTRO SISTEMA")
+        print("\nGRACIAS POR UTILIZAR NUESTRO SISTEMA\n")
     
     else:
-        print("ACCION NO VALIDA")
+        print("\nACCION NO VALIDA, VOLVIENDO AL MENU\n")
         main()
 
 if __name__ == "__main__":
