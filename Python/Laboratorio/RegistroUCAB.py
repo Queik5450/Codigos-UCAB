@@ -103,7 +103,7 @@ def create_report():
             employee_data = employee.split()
             employee_salary = float(employee_data[4])
                 
-            if (int(employee_data[3]) == int(department_number)) and (int(employee_data[3]) == department_check) and (salary_range_start <= employee_salary <= salary_range_end):
+            if (int(employee_data[3]) == int(department_number) == department_check) and (salary_range_start <= employee_salary <= salary_range_end):
                 employee_cedula = employee_data[0]
                 employee_name = employee_data[1]
                 employee_sex = employee_data[2]
