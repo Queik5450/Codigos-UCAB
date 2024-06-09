@@ -8,6 +8,7 @@ A partir de los datos almacenados en el archivo ESTUDIANTES.DAT
 elaborar un reporte (archivo de salida, llamado REPORTE.TXT) que
 contenga la cédula, nombre, sexo y promedio de nota en un rango dado.
 """
+import sys
 
 def askData():
     try:
@@ -65,6 +66,7 @@ def main():
         create_report(promedio1,promedio2)
     if (option == 3):
         print("\nGRACIAS POR UTILIZAR NUESTRO SISTEMA\n")
+        sys.exit()
     
     else:
         print("\nACCION NO VALIDA, VOLVIENDO AL MENU\n")
