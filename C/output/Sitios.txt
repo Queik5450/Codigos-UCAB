@@ -1,0 +1,14 @@
+La Llovizna,Plaza Monumental,10
+La Llovizna,Muelle Macagua,15
+Plaza Monumental,La Llovizna,10
+Plaza Monumental,Catedral,5
+Plaza Monumental,Mercado Municipal,7
+Muelle Macagua,La Llovizna,15
+Muelle Macagua,Paseo Caroní,8
+Catedral,Plaza Monumental,5
+Catedral,Museo Guayana,12
+Mercado Municipal,Plaza Monumental,7
+Mercado Municipal,Plaza Bolívar,9
+Paseo Caroní,Muelle Macagua,8
+Plaza Bolívar,Mercado Municipal,9
+Museo Guayana,Catedral,12
