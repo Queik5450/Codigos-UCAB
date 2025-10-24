@@ -1,0 +1,315 @@
+.navbar 
+{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul
+{
+    margin: 0;
+    padding: 12px 24px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.navbarElement
+{
+    display: inline-block;
+}
+
+.navbarLogo img
+{
+    width: clamp(56px, 8vw, 120px);
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbarLogo 
+{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.navbarElement img
+{
+    max-height: 50px;
+    height: auto;
+    width: auto;
+}
+
+.navbarElement a 
+{
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 6px;
+    font-size: 16px;
+}
+
+.navbarElement a:hover, .navbarElement a:focus 
+{
+    color: #3bb5aa;
+}
+
+@media (max-width: 480px) 
+{
+    .navbar ul 
+    {
+        padding: 8px 12px;
+        gap: 10px;
+    }
+    .navbarElement a { font-size: 14px; padding: 6px 4px; }
+    .navbarLogo img { width: 40px; height: 40px; }
+}
+
+.header
+{
+    background-image: url('https://www.psu.com/wp/wp-content/uploads/2020/10/Metal-Gear-Solid-V-Phantom-Pain-PS4-Wallpapers-05.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 12vw;
+    height: 36vh;
+    min-height: 220px;
+}
+
+.headerLogo 
+{
+    max-width: clamp(220px, 32vw, 560px);
+    width: auto;
+    height: auto;
+    display: block;
+    margin-right: auto;
+}
+
+@media (max-width: 480px)
+{
+    .header { height: 30vh; min-height: 120px; padding-left: 8vw; }
+    .headerLogo { max-width: 48%; }
+}
+
+.firstSection
+{
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.firstSection .bg-video
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.firstSection h1
+{
+    color: #d7d7d7;
+    font-size: 36px;
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+.firstSection .firstContent
+{
+    position: relative;
+    z-index: 2;
+    padding-left: 12vw;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.firstSection::after 
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) 
+{
+    .firstSection .bg-video { display: none; }
+}
+
+.button
+{
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #3bb5aa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover
+{
+    background-color: #32a19a;
+}
+
+.secondSection
+{
+    background-color: black;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.secondSection h2
+{
+    color: #d7d7d7;
+    font-size: 28px;
+    margin: 0 0 28px 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.info-container
+{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.info-item
+{
+    flex: 1 1 0;
+    padding: 0 12px;
+}
+
+.info-icon
+{
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondSection .info-icon
+{
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 16px auto;
+}
+
+.secondSection .info-icon img,
+.secondSection .info-icon svg
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-item p
+{
+    max-width: 260px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 800px)
+{
+    .info-container { gap: 24px; }
+    .info-item p { max-width: 220px; }
+}
+
+@media (max-width: 600px)
+{
+    .info-container { flex-direction: column; align-items: center; }
+    .info-item { width: 100%; }
+    .secondSection { padding: 40px 16px; }
+}
+
+@media (max-width: 420px)
+{
+    .header { height: 30vh; min-height: 120px; padding-left: 8vw; }
+    .headerLogo { max-width: 48%; }
+    .firstSection .firstContent { padding-left: 8vw; padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .secondSection .info-icon { width: 72px; height: 72px; }
+}
+
+.thirdSection
+{
+    padding: 40px 20px 120px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.thirdSection h2
+{
+    text-align: center;
+    margin: 0 0 18px 0;
+    font-size: 20px;
+}
+
+.articles-grid
+{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.article-card
+{
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.article
+{
+    background-color:black;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.article img
+{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.article-caption
+{
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px)
+{
+    .articles-grid { flex-direction: column; gap: 18px; }
+    .article-card { width: 100%; }
+    .article-thumb { height: 160px; }
+}
+
+.footer
+{
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
