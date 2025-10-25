@@ -268,27 +268,30 @@
     align-items: flex-start;
 }
 
-.article-card
+.article-card 
 {
     width: 48%;
     box-sizing: border-box;
 }
 
-.article
+.article 
 {
-    background-color:black;
+    background-color: black;
     height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 12px;
+    overflow: hidden;
 }
 
-.article img
+.article img 
 {
+    width: auto;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
+    display: block;
 }
 
 .article-caption
@@ -302,12 +305,12 @@
 {
     .articles-grid { flex-direction: column; gap: 18px; }
     .article-card { width: 100%; }
-    .article-thumb { height: 160px; }
+    .article { height: 240px; }
 }
 
 .footer
 {
-    background-color: #111;
+    background-color: black;
     color: #ccc;
     text-align: center;
     padding: 20px;
