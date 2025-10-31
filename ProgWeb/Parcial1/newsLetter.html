@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="José Andrés Pereira" content="Newsletter de noticias de Metal Gear">
+    <meta name="author" content="José Andrés Pereira">
     <link rel="stylesheet" href="newsLetterDesign.css">
     <title>Metal Gear Network</title>
 </head>
 
 <body>
-    <nav class="navbar">
+    <header class="navbar">
 
         <div class="navInner">
 
@@ -27,21 +27,21 @@
 
         </div>
 
-    </nav>
+    </header>
 
-    <header class="headerContainer" id="home">
-            <button class="headerArrow headerArrowLeft" aria-label="Anterior">←</button>
+    <section class="infoSection" id="home">
+            <button class="infoSectionArrow infoSectionArrowLeft" aria-label="Anterior">←</button>
 
-            <div class="headerTitle">
+            <div class="infoSectionTitle">
                 <a href="https://metalgear.net/kojima-interview-in-weekly-toyo-keizai-translated/"> <h1>Entrevista a Kojima en el Weekly Toyo Keizai traducida</h1> </a>
-                <p class="headerSubtitle">Kubricked es un traductor/intérprete profesional de japonés-inglés, miembro de la comunidad MGN y amigo suyo, quien tuvo la amabilidad de traducir esto para los fans. 
+                <p class="infoSectionSubtitle">Kubricked es un traductor/intérprete profesional de japonés-inglés, miembro de la comunidad MGN y amigo suyo, quien tuvo la amabilidad de traducir esto para los fans. 
                     No olviden seguirlo en Twitter: <a href="https://twitter.com/kubrickedyaku">Kubricked</a></p>
             </div>
 
-            <button class="headerArrow headerArrowRight" aria-label="Siguiente">→</button>
-    </header>
+            <button class="infoSectionArrow infoSectionArrowRight" aria-label="Siguiente">→</button>
+    </section>
 
-    <div class="firstSection" id="about">
+    <section class="firstSection" id="about">
         <video class="bgVideoFirst" autoplay muted loop playsinline aria-hidden="true">
             <source src="invisible.mp4" type="video/mp4">
             Tu navegador no soporta la etiqueta de video.
@@ -63,44 +63,45 @@
                 <span class="arrowButton" aria-hidden="true">→</span>
             </button>
 
-    </div>
+    </section>
 
-    <div class="secondSection" id="articles">
+    <section class="secondSection" id="articles">
         <h2>Artículos</h2>
-        <div class="articleGrid">
 
-            <article class="articleCard">
+        <ul class="articleGrid">
+
+            <li><article class="articleCard">
 
                 <div class="article">
                     <a href="https://www.slashgear.com/metal-gear-rising-revengeance-pr-stunt-involves-slicing-up-a-police-car-19270058/"><img src="https://tse1.mm.bing.net/th/id/OIP.JTUZ21mfBfloUaPyNlTOvQHaFT?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kojima con carro cortado a la mitad"></a>
                 </div>
                 <p class="articleCaption"><strong>Hideo Kojima fue avistado cortando autos de la policia por la mitad como parte de su campaña publicitaria de Metal Gear Rising</strong></p>
 
-            </article>
+            </article></li>
 
-            <article class="articleCard">
+            <li><article class="articleCard">
 
                 <div class="article">
                     <a href="https://youtu.be/dQw4w9WgXcQ?si=kBsZvsOMO40WW0K3"><img src="https://i.pinimg.com/736x/a1/63/a9/a163a9263471ac84582dae3437d3e109.jpg" alt="grua"></a>
                 </div>
                 <p class="articleCaption"><strong>¡Increíble! Anuncian el tan esperado regreso de la franquicia de Metal Gear.</strong></p>
 
-            </article>
+            </article></li>
 
-            <article class="articleCard">
+            <li><article class="articleCard">
 
                 <div class="article">
                     <a href="https://www.metalgearinformer.com/close-up-a-hideo-kojima-book-tomorrow-is-in-your-hands/"><img src="https://www.metalgearinformer.com/wp-content/uploads/2020/11/A-Hideo-Kojima-Book-Tomorrow-is-in-your-Hands-1024x683.jpg" alt="Libro de Kojima"></a>
                 </div>
                 <p class="articleCaption"><strong>Primer plano: Un libro de Hideo Kojima: El mañana está en tus manos</strong></p>
 
-            </article>
+            </article></li>
 
-        </div>
+        </ul>
 
-    </div>
+    </section>
 
-    <div class="thirdSection" id="userData">
+    <section class="thirdSection" id="userData">
         <h2> Suscribete a nuestro newsletter para recibir todas las noticias nuevas</h2>
 
         <div class="userFormContainer">
@@ -117,7 +118,7 @@
 
         </div>
 
-    </div>
+    </section>
 
     <footer class="footer">
         <p>© 2025 José Andrés Pereira<br>
