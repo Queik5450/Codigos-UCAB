@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="José Andrés Pereira" content="Newsletter de noticias de Metal Gear">
+    <link rel="stylesheet" href="newsLetterDesign.css">
+    <title>Metal Gear Network</title>
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <div class="navInner">
+
+            <div class="navbarLogo">
+                <a href="#home" aria-label="MGN home">
+                    <img src="https://metalgear.net/wp-content/uploads/2025/04/MGN_logo.png" alt="MGN logo">
+                </a>
+            </div>
+
+            <ul class="nav-list">
+                <li class="navItem"><a href="#home">Inicio</a></li>
+                <li class="navItem"><a href="#articles">Noticias</a></li>
+                <li class="navItem"><a href="#about">Sobre nosotros</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <header class="headerContainer" id="home">
+            <button class="headerArrow headerArrowLeft" aria-label="Anterior">←</button>
+
+            <div class="headerTitle">
+                <a href="https://metalgear.net/kojima-interview-in-weekly-toyo-keizai-translated/"> <h1>Entrevista a Kojima en el Weekly Toyo Keizai traducida</h1> </a>
+                <p class="headerSubtitle">Kubricked es un traductor/intérprete profesional de japonés-inglés, miembro de la comunidad MGN y amigo suyo, quien tuvo la amabilidad de traducir esto para los fans. 
+                    No olviden seguirlo en Twitter: <a href="https://twitter.com/kubrickedyaku">Kubricked</a></p>
+            </div>
+
+            <button class="headerArrow headerArrowRight" aria-label="Siguiente">→</button>
+    </header>
+
+    <div class="firstSection" id="about">
+        <video class="bgVideoFirst" autoplay muted loop playsinline aria-hidden="true">
+            <source src="invisible.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <h2>Bienvenido a Metal Gear Network</h2>
+            <p>
+                Tu punto de encuentro esencial para todo lo relacionado con el universo de Metal Gear. No debes esperar mas para 
+                explorar las noticias mas recientes sobre la saga.
+                Dentro de esta página, encontrarás: <br>
+                - Las últimas noticias y rumores sobre remakes, colecciones o futuros proyectos. <br>
+                - Recomendaciones de merchandising y contenido de la comunidad. <br>
+                ¡No dejes que tu radar se quede en blanco! Desplázate hacia abajo, ponte tus gafas de visión nocturna y acompáñanos en esta misión.
+                El destino de la paz mundial (y de tu conocimiento de MGS) está en tus manos.
+            </p>
+
+            <button type="button" class="buttonPill" onclick="window.location.href='https://metalgear.net/';">
+                MÁS INFORMACIÓN
+                <span class="arrowButton" aria-hidden="true">→</span>
+            </button>
+
+    </div>
+
+    <div class="secondSection" id="articles">
+        <h2>Artículos</h2>
+        <div class="articleGrid">
+
+            <article class="articleCard">
+
+                <div class="article">
+                    <a href="https://www.slashgear.com/metal-gear-rising-revengeance-pr-stunt-involves-slicing-up-a-police-car-19270058/"><img src="https://tse1.mm.bing.net/th/id/OIP.JTUZ21mfBfloUaPyNlTOvQHaFT?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kojima con carro cortado a la mitad"></a>
+                </div>
+                <p class="articleCaption"><strong>Hideo Kojima fue avistado cortando autos de la policia por la mitad como parte de su campaña publicitaria de Metal Gear Rising</strong></p>
+
+            </article>
+
+            <article class="articleCard">
+
+                <div class="article">
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=kBsZvsOMO40WW0K3"><img src="https://i.pinimg.com/736x/a1/63/a9/a163a9263471ac84582dae3437d3e109.jpg" alt="grua"></a>
+                </div>
+                <p class="articleCaption"><strong>¡Increíble! Anuncian el tan esperado regreso de la franquicia de Metal Gear.</strong></p>
+
+            </article>
+
+            <article class="articleCard">
+
+                <div class="article">
+                    <a href="https://www.metalgearinformer.com/close-up-a-hideo-kojima-book-tomorrow-is-in-your-hands/"><img src="https://www.metalgearinformer.com/wp-content/uploads/2020/11/A-Hideo-Kojima-Book-Tomorrow-is-in-your-Hands-1024x683.jpg" alt="Libro de Kojima"></a>
+                </div>
+                <p class="articleCaption"><strong>Primer plano: Un libro de Hideo Kojima: El mañana está en tus manos</strong></p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+    <div class="thirdSection" id="userData">
+        <h2> Suscribete a nuestro newsletter para recibir todas las noticias nuevas</h2>
+
+        <div class="userFormContainer">
+
+            <form class="userForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <input type="submit" value="Suscribirse">
+            </form>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 José Andrés Pereira<br>
+            Ingeniería Informática<br>
+            UCAB Guayana</p>
+    </footer>
+
+</body>
+
+</html>
